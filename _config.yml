@@ -1,0 +1,27 @@
+title: Gwaith-i-Mírdain
+description: >-
+  The Jewel-smiths of Eregion.
+baseurl: ""
+url: "https://gwaithimirdain.github.io"
+
+github_username: gwaithimirdain
+
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Pages shown in the site header navigation, in this order.
+header_pages:
+  - blog.md
+  - about.md
+
+# Show 10 posts per page on the blog index.
+paginate: 10
+paginate_path: "/blog/page:num/"
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - README.md
