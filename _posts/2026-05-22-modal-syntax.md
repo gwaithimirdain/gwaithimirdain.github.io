@@ -4,7 +4,7 @@ title: "Syntax for modal type theory"
 date: 2026-05-22
 ---
 
-Let's start the blog off by tempting [Wadler's Law](https://wiki.haskell.org/Wadler%27s_Law)!
+Let's start the blog off by tempting [Wadler's Law](https://wiki.haskell.org/Wadler%27s_Law)!  (Actually, Wadler's Law does not align with my experience.  Perhaps due to the now-well-known nature of the Law itself and the perjorative view it implies of discussions of syntax, I've found that hardly anyone else ever wants to talk about syntax at all!  At least I'm [not the only one](https://www.youtube.com/watch?v=kQjrcSMYpaA).)
 
 My current project is to enhance Narya with Multimodal Type Theory.  (I always intended to do that, but I'm doing it now because I hope that it will be useful in completing the implementation of HOTT; more on that later.)  I'll have more to say about the implementation later, but right now I'm pondering some questions of concrete syntax.
 
@@ -71,6 +71,8 @@ In the case of a mode theory that's finitely generated but not finite, where onl
 
 Notating horizontal composition (along 0-cells) is more tricky.  The simplest option would be something like `α β x`.  As long as the names of 2-cells are not also available as identifiers, I think this would be technically unambiguous --- but it could still be confusing, with `α β f x` meaning "act on the function-variable `f` with the horizontal composite of 2-cells `α β`, then apply the result to the argument `x`".
 
-A more verbose option would be for all key actions to be labeled by some keyword or symbol, such as `key α x` or `🗝️ α x`.  Then the first argument would always be a 2-cell, perhaps including a parenthesized (horizontal) composite of generating 2-cells: `🗝️ (α β) x`.  And we could combine this with the previous option by saying that if the 2-cell argument is just a single generator, the key can be omitted: `α x` means `🗝️ α x`, but `🗝️ (α β) x` has no analogous abbreviated form.
+A more verbose option would be for all key actions to be labeled by some keyword or symbol, such as `key α x` or `🗝️ α x`.  Then the first argument would always be a 2-cell, perhaps including a parenthesized (horizontal) composite of generating 2-cells: `🗝️ (α β) x`.
+
+We could combine the two options by saying that if the 2-cell argument is just a single generator, the key can be omitted: `α x` means `🗝️ α x`, but `🗝️ (α β) x` has no analogous abbreviated form.  However, unlike the pure-key option, this would require that the names of 2-cells can't be re-used for user definitions.
 
 I'm especially curious if anyone else has thoughts about this.  Which versions look best to you?  If we need a "key" label, do you prefer the keyword `key`, the symbol `🗝️` (or `🔑`), or something else?
