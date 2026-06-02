@@ -1,5 +1,5 @@
 ---
 layout: home
-title: Blog
+title: Gwaith-i-Mírdain Development Blog
 permalink: /blog/
 ---
