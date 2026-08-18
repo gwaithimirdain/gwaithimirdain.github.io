@@ -20,7 +20,7 @@ But I do want to comment on a few choices related to previous blog posts, and on
 
 - For window modalities and modal field projections, I stuck with the same kind of modal annotations rather than introduce anything new: `match (x :□| _) [ ... ]` and `(x :□| _) .fld`.  Although it may be a bit uglier that some other possibilities, I think it reduces the cognitive load on the user (which is already heavy in a modal type theory) to use the same syntax every time a term is being checked in a locked context.
 
-- The above choice means that to define a record type with a modal field, you *must* use the self variable syntax for record types!
+- The above choice means that to define a record type with a modal field, you *must* use the [self variable]({{ site.baseurl }}{% post_url 2026-06-17-self-variables %}) syntax for record types!
 
 - Claude's function to strip keys off an environment did not work.  I tried writing the same function in a different way, but that didn't work either.  Eventually I settled on another way that I'm pretty confident works.  However, it seems hard to justify semantically, as it involves using "imaginary faces" of cubes that temporarily exist but eventually get canceled by a degeneracy.  (This doesn't happen in plain modal type theory, which is semantically fine, only in the more experimental version with "discrete modalities".)
 
